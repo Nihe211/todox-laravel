@@ -43,7 +43,7 @@ Nếu bạn muốn chạy thử dự án này trên máy tính cá nhân, hãy l
 ```bash
 git clone <đường-link-github-của-bạn>
 cd todox-app
-2. Cài đặt các thư viện PHP:
+**2. Cài đặt các thư viện PHP:**
 
 Bash
 composer install
