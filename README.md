@@ -43,15 +43,17 @@ Nếu bạn muốn chạy thử dự án này trên máy tính cá nhân, hãy l
 ```bash
 git clone <đường-link-github-của-bạn>
 cd todox-app
+```
 **2. Cài đặt các thư viện PHP:**
 
-Bash
+```bash
 composer install
-3. Cấu hình môi trường (Database):
+```
+**3. Cấu hình môi trường (Database):**
 
 Copy file .env.example thành file .env:
 
-Bash
+```bash
 cp .env.example .env
 Mở file .env lên và điền thông tin Database ở máy bạn (ví dụ dùng XAMPP):
 
@@ -62,18 +64,21 @@ DB_PORT=3306
 DB_DATABASE=todox_db
 DB_USERNAME=root
 DB_PASSWORD=
-4. Khởi tạo Key bảo mật và Tạo bảng Database:
+```
+**4. Khởi tạo Key bảo mật và Tạo bảng Database:**
 
-Bash
+```bash
 php artisan key:generate
 php artisan migrate
-5. Chạy server Laravel:
+```
+**5. Chạy server Laravel:**
 
-Bash
+```bash
 php artisan serve
 Truy cập vào http://127.0.0.1:8000 trên trình duyệt để sử dụng hệ thống.
-
-📂 Cấu trúc dự án (Core)
+```
+---
+## 📂 Cấu trúc dự án (Core)
 Những file xử lý logic cốt lõi của dự án nằm tại:
 
 Controller: app/Http/Controllers/TaskController.php (Xử lý logic thêm, xóa, cập nhật trạng thái và các bộ lọc thời gian).
