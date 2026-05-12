@@ -86,5 +86,17 @@ Controller: app/Http/Controllers/TaskController.php (Xử lý logic thêm, xóa,
 Model: app/Models/Task.php (Giao tiếp với bảng tasks trong database).
 
 View: resources/views/tasks/index.blade.php (Giao diện chính chứa toàn bộ HTML và logic hiển thị của Bootstrap 5).
+---
 
-© 2026 Todo_app | Nguyễn Thanh Hiển.
+## 📬 Liên hệ và Kết nối
+
+Tôi là **Nguyễn Thanh Hiển**, một lập trình viên tập trung vào phát triển Web (Full-stack) với niềm đam mê xây dựng các hệ thống tối ưu và trải nghiệm người dùng mượt mà. Dự án này là một phần trong hành trình phát triển kỹ năng và xây dựng Portfolio cá nhân của tôi.
+
+* **Vị trí mong muốn:** Full-stack Web Developer / Backend Developer (Laravel)
+* **Kỹ năng chính:** PHP (Laravel), JavaScript, MySQL, Docker, Graphic Design.
+* **Email:** [thanhhien211@example.com](mailto:thanhhien211@example.com)
+* **GitHub:** [github.com/thanh-hien211](https://github.com/thanh-hien211)
+---
+*© 2026 Nguyễn Thanh Hiển.*
+
+
