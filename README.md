@@ -41,7 +41,7 @@ Nếu bạn muốn chạy thử dự án này trên máy tính cá nhân, hãy l
 
 **1. Clone dự án về máy:**
 ```bash
-git clone <đường-link-github-của-bạn>
+git clone https://github.com/Nihe211/todox-laravel.git
 cd todox-app
 ```
 **2. Cài đặt các thư viện PHP:**
