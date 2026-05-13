@@ -81,11 +81,12 @@ Truy cập vào http://127.0.0.1:8000 trên trình duyệt để sử dụng h�
 ## 📂 Cấu trúc dự án (Core)
 Những file xử lý logic cốt lõi của dự án nằm tại:
 
-Controller: app/Http/Controllers/TaskController.php (Xử lý logic thêm, xóa, cập nhật trạng thái và các bộ lọc thời gian).
+* **Controller:** app/Http/Controllers/TaskController.php (Xử lý logic thêm, xóa, cập nhật trạng thái và các bộ lọc thời gian).
 
-Model: app/Models/Task.php (Giao tiếp với bảng tasks trong database).
+* **Model:** app/Models/Task.php (Giao tiếp với bảng tasks trong database).
 
-View: resources/views/tasks/index.blade.php (Giao diện chính chứa toàn bộ HTML và logic hiển thị của Bootstrap 5).
+* **View:** resources/views/tasks/index.blade.php (Giao diện chính chứa toàn bộ HTML và logic hiển thị của Bootstrap 5).
+
 ---
 
 ## 📬 Liên hệ và Kết nối
