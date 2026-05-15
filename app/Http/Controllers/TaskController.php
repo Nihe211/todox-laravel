@@ -53,16 +53,24 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $request->validate(['title' => 'required|string|max:255']);
-        Task::create([
+        $task = Task::create([
             'title' => $request->title
         ]);
+        if ($request->ajax() || $request->header('X-Requested-With') === 'XMLHttpRequest') {
+            return response()->json([
+                'success' => true,
+                'task' => $task,
+                'html' => view('tasks.item', compact('task'))->render()
+            ]);
+        }
+
         return back();
     }
 
     public function update(Request $request, Task $task)
     { // 1. Chặn logic: Nếu task đã hoàn thành thì không làm gì cả và quay lại
         if ($task->status === 'complete') {
-            return back();
+            return response()->json(['success' => false, 'message' => 'Task đã hoàn thành']);
             // Bạn có thể dùng return back()->with('error', 'Không thể hoàn tác'); nếu có làm thông báo lỗi
         }
 
@@ -72,12 +80,20 @@ class TaskController extends Controller
                 'status' => 'complete',
                 'completedAt' => now()
             ]);
+
+            // Trả về JSON báo thành công kèm thời gian vừa hoàn thành
+            if ($request->ajax() || $request->header('X-Requested-With') === 'XMLHttpRequest') {
+                return response()->json([
+                    'success' => true,
+                    'completed_at' => $task->completedAt->format('H:i - d/m')
+                ]);
+            }
         }
 
         return back();
     }
 
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
         // 1. Chủ động tìm task theo ID gửi lên
         $task = \App\Models\Task::find($id);
@@ -87,7 +103,10 @@ class TaskController extends Controller
             $task->delete();
         }
 
-        // 3. Tải lại trang
+        // 3. Trả về JSON xác nhận xóa thành công cho JavaScript
+        if ($request->ajax() || $request->header('X-Requested-With') === 'XMLHttpRequest') {
+            return response()->json(['success' => true]);
+        }
         return back();
     }
 }
